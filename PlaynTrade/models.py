@@ -24,7 +24,7 @@ class ShopOrder(models.Model):
     order_date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2)
     shipping_address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
-    payment_method = models.ForeignKey('UserPaymentMethod', on_delete=models.SET_NULL, null=True)
+    payment_method_id = models.ForeignKey('UserPaymentMethod', on_delete=models.SET_NULL, null=True)
 
 class ShoppingCartItem(models.Model):
     cart_id = models.ForeignKey('ShoppingCart', on_delete=models.CASCADE)
@@ -32,21 +32,21 @@ class ShoppingCartItem(models.Model):
     qty = models.PositiveIntegerField()
 
 class ShoppingCart(models.Model):
-    user = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
 class PaymentType(models.Model):
     value = models.CharField(max_length=50)
 
 class UserPaymentMethod(models.Model):
-    user = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
-    payment_type = models.ForeignKey(PaymentType, on_delete=models.PROTECT)
+    user_id = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
+    payment_type_id = models.ForeignKey(PaymentType, on_delete=models.PROTECT)
     provider = models.CharField(max_length=100)
     account_number = models.CharField(max_length=100)
     expiry_date = models.DateField()
     is_default = models.BooleanField(default=False)
 
 class PromotionCategory(models.Model):
-    category = models.ForeignKey('ProductCategory', on_delete=models.CASCADE)
-    promotion = models.ForeignKey('Promotion', on_delete=models.CASCADE)
+    category_id = models.ForeignKey('ProductCategory', on_delete=models.CASCADE)
+    promotion_id = models.ForeignKey('Promotion', on_delete=models.CASCADE)
 
 class Promotion(models.Model):
     name = models.CharField(max_length=100)
@@ -56,30 +56,30 @@ class Promotion(models.Model):
     end_date = models.DateField()
 
 class ProductCategory(models.Model):
-    parent_category = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
+    parent_category_id = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
     category_name = models.CharField(max_length=100)
 
 class Product(models.Model):
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+    category_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField()
     product_image = models.ImageField(upload_to='product_images/', blank=True, null=True)
 
 class Variation(models.Model):
     name = models.CharField(max_length=100)
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+    category_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
 
 class VariationOption(models.Model):
     value = models.CharField(max_length=100)
-    variation = models.ForeignKey(Variation, on_delete=models.CASCADE)
+    variation_id = models.ForeignKey(Variation, on_delete=models.CASCADE)
 
 class ProductItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     SKU = models.CharField(max_length=50, unique=True)
     qty_in_stock = models.PositiveIntegerField()
     product_image = models.ImageField(upload_to='product_item_images/', blank=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
 class ProductConfiguration(models.Model):
-    product_item = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
-    variation_option = models.ForeignKey(VariationOption, on_delete=models.CASCADE)
+    product_item_id = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
+    variation_option_id = models.ForeignKey(VariationOption, on_delete=models.CASCADE)
