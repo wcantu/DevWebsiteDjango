@@ -83,3 +83,15 @@ class ProductItem(models.Model):
 class ProductConfiguration(models.Model):
     product_item_id = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
     variation_option_id = models.ForeignKey(VariationOption, on_delete=models.CASCADE)
+
+class OrderLine(models.Model):
+    product_item_id = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
+    order_id = models.ForeignKey(ShopOrder, on_delete=models.CASCADE)
+    qty = models.PositiveIntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+class UserReview(models.Model):
+    user_id = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
+    ordered_product_id = models.ForeignKey(OrderLine, on_delete=models.CASCADE)
+    rating_value = models.PositiveIntegerField()  # Assuming you store ratings as positive integers
+    comment = models.TextField()
