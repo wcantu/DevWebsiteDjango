@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ############################################################################################################ADDED:jp
     'home',
+    'customerInfoPage',
+    'shoppingCartPage',
 ]
 
 MIDDLEWARE = [
