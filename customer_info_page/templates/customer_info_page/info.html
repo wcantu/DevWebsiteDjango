@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Info</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,.05); /* Slight shadow for depth */
+        }
+        .card-title {
+            color: #0056b3; /* Bootstrap primary color */
+        }
+        .card-body {
+            background-color: #ffffff; /* White background for content cards */
+        }
+        .form-label {
+            font-size: 1.2rem;
+            color: #495057; /* Dark gray for form label */
+        }
+        .container {
+            background-color: #ffffff; /* White background for the container */
+            padding: 2rem;
+            border-radius: 0.5rem; /* Rounded corners for the container */
+            margin-top: 2rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05); /* Shadow for the container */
+        }
+        /* Additional custom styles */
+        .mb-4 input[type="text"] {
+            font-weight: 500;
+        }
+        .card h5 {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .bg-primary {
+            background-color: #007bff!important;
+        }
+        .text-primary {
+            color: #007bff!important;
+        }
+        .text-white {
+            color: #fff!important;
+        }
+        .bg-body-tertiary {
+            background-color: #6c757d; /* You can change this color as needed */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+<body>
+    <div class="container">
+        <!-- Your Account Text Field -->
+        <div class="mb-4">
+            <label for="yourAccount" class="form-label text-primary"><strong>Your Account</strong></label>
+            <input type="text" id="yourAccount" class="form-control" placeholder="Enter account details" aria-label="Your Account">
+        </div>
+
+        <!-- Boxes Section -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">User Profile Information</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Address Book</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Payment Methods</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Order History</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Shopping Cart</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Wish List/Promotions</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Information</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">User Reviews</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">Support And FAQ</h5>
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
