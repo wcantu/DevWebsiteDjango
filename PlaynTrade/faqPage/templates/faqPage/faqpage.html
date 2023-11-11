@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS link -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            color: #343a40;
+        }
+
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .question-header {
+            background-color: #007bff;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border-bottom: 1px solid #007bff;
+        }
+
+        .question-header::after {
+            content: '+';
+            float: right;
+            font-weight: normal;
+        }
+
+        .collapsed .question-header::after {
+            content: '-';
+        }
+
+        .question-body {
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        .question-body p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Frequently Asked Questions</h1>
+    <p>Play N Trade: Your go-to resource for all your collectible needs</p>
+</div>
+
+<div class="container mt-4">
+    <!-- Collectibles Questions -->
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Question 1: What types of collectibles do you sell?
+        </div>
+        <div class="collapse question-body show" id="collapseOne">
+            <div class="card card-body">
+                <p>We offer a diverse range of collectibles, including Pokemon trading cards, plushies, figures, stickers, posters, clothing, shirts, hats, electronic controllers, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Question 2: How can I track my order?
+        </div>
+        <div class="collapse question-body" id="collapseTwo">
+            <div class="card card-body">
+                <p>Once your order ships, you will receive a tracking number via email. You can use this number to track your shipment on our website or the courier's site.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Question 3: What payment methods do you accept?
+        </div>
+        <div class="collapse question-body" id="collapseThree">
+            <div class="card card-body">
+                <p>We accept major credit/debit cards (Visa, MasterCard), PayPal, and other secure payment methods for a hassle-free checkout experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Question 4: Can I return or exchange an item?
+        </div>
+        <div class="collapse question-body" id="collapseFour">
+            <div class="card card-body">
+                <p>We accept returns and exchanges within 30 days of purchase. Please review our returns policy for detailed instructions and eligibility criteria.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Question 5: Do you offer international shipping?
+        </div>
+        <div class="collapse question-body" id="collapseFive">
+            <div class="card card-body">
+                <p>Yes, we ship internationally. Shipping rates and delivery times may vary depending on the destination. Check our shipping information for details.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            Question 6: How can I contact customer support?
+        </div>
+        <div class="collapse question-body" id="collapseSix">
+            <div class="card card-body">
+                <p>For any inquiries or assistance, our customer support team can be reached via email at support@example.com or through our contact page.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            Question 7: Are your products authentic?
+        </div>
+        <div class="collapse question-body" id="collapseSeven">
+            <div class="card card-body">
+                <p>Yes, all our products, especially trading cards and figures, are sourced from reputable suppliers and are guaranteed to be authentic and of high quality.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            Question 8: Can I cancel my order?
+        </div>
+        <div class="collapse question-body" id="collapseEight">
+            <div class="card card-body">
+                <p>You can cancel your order within 24 hours of purchase. After that timeframe, please contact our customer support for further assistance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Questions -->
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+            Question 9: Do you offer gift wrapping services?
+        </div>
+        <div class="collapse question-body" id="collapseNine">
+            <div class="card card-body">
+                <p>Yes, we offer gift wrapping services for select items. You can choose this option during the checkout process.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+            Question 10: Are pre-owned collectibles available?
+        </div>
+        <div class="collapse question-body" id="collapseTen">
+            <div class="card card-body">
+                <p>We occasionally offer pre-owned collectibles in excellent condition. Check our product listings for availability.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+            Question 11: How do I sign up for promotions and discounts?
+        </div>
+        <div class="collapse question-body" id="collapseEleven">
+            <div class="card card-body">
+                <p>You can sign up for our newsletter to receive exclusive promotions and discounts. Look for the sign-up option on our homepage.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-header" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+            Question 12: What should I do if an item is out of stock?
+        </div>
+        <div class="collapse question-body" id="collapseTwelve">
+            <div class="card card-body">
+                <p>If an item is out of stock, you can sign up for notifications to be alerted when it becomes available again. Alternatively, check back regularly for updates.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS and its dependencies -->
+
+</body>
+</html>

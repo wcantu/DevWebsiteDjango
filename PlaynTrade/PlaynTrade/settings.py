@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'home',
     'customerInfoPage',
     'shoppingCartPage',
+    'faqPage',
+
 ]
 
 MIDDLEWARE = [
