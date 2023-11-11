@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +14,21 @@
             <!--
             NavBar Brand Element
             -->
-            <a class="navbar-brand mr-auto" href="#">Play n' Trade</a>
+           {% comment %} <a class="navbar-brand " href="#">Play n' Trade</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button>{% endcomment %}
 
+            <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img src="{% static 'carousel_component/testing.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                  Bootstrap
+                </a>
+              </div>
+            </nav>
             <!--
             The Nav Link Elements
             -->
@@ -131,6 +141,24 @@
                 <!--        </li>-->
             </div>
 
+        {% comment %} icon for user profile {% endcomment %}
+
+          <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar" href="#">
+                  <img src="{% static 'carousel_component/testing.jpg' %}" alt="User Profile Icon" width="30" height="24" class="d-inline-block align-text-top">
+
+                </a>
+              </div>
+            </nav>
+        {% comment %} icon for user profile {% endcomment %}
+            <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar" href="#">
+                  <img src="{% static 'carousel_component/testing.jpg' %}" alt="User Profile Icon" width="30" height="24" class="d-inline-block align-text-top">
+                </a>
+              </div>
+            </nav>
         </div>
     </nav>
 </body>
