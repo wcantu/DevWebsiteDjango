@@ -12,135 +12,9 @@
 </body>
 <div class="container">
     <!--
-    NavBar Component
+    NavBar Component @ top_navbar.html
     -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
-        <div class="container">
-            <!--
-            NavBar Brand Element
-            -->
-            <a class="navbar-brand mr-auto" href="#">Play n' Trade</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!--
-            The Nav Link Elements
-            -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                    <!--
-                    Home NavLink
-                    -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-
-                    <!--
-                    Trading Card NavLink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Trading Cards
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Pokemon</a></li>
-                            <li><a class="dropdown-item" href="#">Marvel</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sports</a></li>
-                        </ul>
-                    </li>
-
-                    <!--
-                     Collectibles Navlink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Collectibles
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Retro & Classic Video Games</a></li>
-                            <li><a class="dropdown-item" href="#">Comic Books</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Figures</a></li>
-                        </ul>
-                    </li>
-
-                    <!--
-                     Clothing NavLink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Clothing
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Shirts</a></li>
-                            <li><a class="dropdown-item" href="#">Hats</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!--
-                      Electronics NavLink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Electronics
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Headsets</a></li>
-                            <li><a class="dropdown-item" href="#">Controllers</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <!--
-                  SearchBar Navbar
-                -->
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-
-                <!--        &lt;!&ndash;-->
-                <!--          Shopping Cart Icon-->
-                <!--        &ndash;&gt;-->
-                <!--        <li class="nav-item">-->
-                <!--          <a class="nav-link" href="#">-->
-                <!--              <i class="bi bi-cart"></i>-->
-                <!--          </a>-->
-                <!--        </li>-->
-
-                <!--        &lt;!&ndash;-->
-                <!--          User Account Icon-->
-                <!--        &ndash;&gt;-->
-                <!--        <li class="nav-item">-->
-                <!--            <a class="nav-link" href="#">-->
-                <!--                <i class="bi bi-person"></i>-->
-                <!--            </a>-->
-                <!--        </li>-->
-            </div>
-
-        </div>
-    </nav>
+    {% include 'home/top_navbar.html' %}
     <!--
     END of NavBar Component
     -->
@@ -167,7 +41,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="{% static 'carousel_component/testing.jpg' %}" class="d-block w-75" alt="...">
+                    <img src="{% static '/carousel_component/testing.jpg' %}" class="d-block w-75" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
@@ -196,7 +70,16 @@
     <!--
     END of Carousel Component
     -->
+
+    <!--
+        Category Heading
+    -->
     <h1 class="display-4">Browse By Category</h1>
+
+    <!--
+        Display product in tiles somehow...
+    -->
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
