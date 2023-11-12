@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product,ProductItem,ProductCategory
+from .models import Product,ProductCategory
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product,id=product_id)
@@ -11,5 +11,5 @@ def product_detail(request, product_id):
     #pCategory = get_object_or_404(ProductCategory,id=product_id)
     #res = {'product':product,'info':product_info,'category':pCategory}
 
-    res = {'product': product}#, 'info': product_info}  # Yes, a list of dictionaries lol
+    res = {'product': product}
     return render(request, 'productListing.html', {'item':res})

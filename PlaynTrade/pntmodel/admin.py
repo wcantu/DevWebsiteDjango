@@ -16,7 +16,6 @@ from .models import (
     Product,
     Variation,
     VariationOption,
-    ProductItem,
     ProductConfiguration,
 )
 
@@ -37,5 +36,4 @@ admin.site.register(ProductCategory)
 admin.site.register(Product)
 admin.site.register(Variation)
 admin.site.register(VariationOption)
-admin.site.register(ProductItem)
 admin.site.register(ProductConfiguration)
