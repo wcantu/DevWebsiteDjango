@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load cart_tags %}
+
 
 {% block content %}
 <div class="container">
@@ -16,8 +18,8 @@
     <tbody>
       {% for item in items %}
       <tr>
-        <td>{{ item.product_id.name }}</td>
-        <td>${{ item.product_id.price }}</td>
+        <td>{{ item.product.name }}</td>  <!-- Updated to item.product.name -->
+        <td>${{ item.product.price }}</td>  <!-- Updated to item.product.price -->
         <td>
           <form action="{% url 'update_cart' item.id %}" method="post">
             {% csrf_token %}
@@ -25,7 +27,7 @@
             <button type="submit" class="btn btn-primary btn-sm">Update</button>
           </form>
         </td>
-        <td>${{ item.qty|multiply:item.product_id.price }}</td>
+        <td>${{ item.qty|multiply:item.product.price }}</td>  <!-- Updated to item.product.price -->
         <td>
           <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">Remove</a>
         </td>
@@ -40,8 +42,4 @@
 </div>
 {% endblock %}
 
-{% block javascript %}
-<script type="text/javascript">
-// You can add some JavaScript here to handle AJAX updates if needed.
-</script>
-{% endblock %}
+
