@@ -76,7 +76,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     product_image = models.ImageField(upload_to='product_images/', blank=True, null=True)
-    SKU = models.CharField(max_length=50, unique=True, default=123456)
+    SKU = models.CharField(max_length=50, unique=True, default='123456')
     qty_in_stock = models.PositiveIntegerField(default=0)
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0.01)
     # def __int__(self):
