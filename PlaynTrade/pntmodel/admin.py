@@ -17,6 +17,7 @@ from .models import (
     Variation,
     VariationOption,
     ProductConfiguration,
+    GuestShoppingCart,
 )
 
 # Register your models in the admin interface
@@ -37,3 +38,6 @@ admin.site.register(Product)
 admin.site.register(Variation)
 admin.site.register(VariationOption)
 admin.site.register(ProductConfiguration)
+admin.site.register(GuestShoppingCart)
+
+
