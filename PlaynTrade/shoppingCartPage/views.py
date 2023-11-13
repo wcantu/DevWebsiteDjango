@@ -1,9 +1,8 @@
 from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
+from .models import *
 
 def shopping_cart(request):
+
     # Here you should fetch the cart items, payment methods, shipping address, etc., from your database.
     # For now, we'll assume this data is hardcoded or comes from the context.
 
@@ -34,5 +33,5 @@ def shopping_cart(request):
     #     'shipping': '{:.2f}'.format(shipping),
     #     'total': '{:.2f}'.format(total),
     # }
-
-    return render(request, 'info.html')
+    product = Product.objects.all()  # Needs to be a shopping cart, rather than the products
+    return render(request, 'cartinfo.html', {'cart':product})

@@ -24,8 +24,8 @@
             <nav class="navbar bg-body-tertiary">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                  <img src="{% static 'carousel_component/testing.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                  Bootstrap
+                  <img src="{% static 'carousel_component/PlayNTradeLogoText.png' %}" alt="Logo" width="204" height="82" class="d-inline-block align-text-top">
+                  {% comment %}Bootstrap{% endcomment %}
                 </a>
               </div>
             </nav>
@@ -40,78 +40,20 @@
                     Home NavLink
                     -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="\">Home</a>
                     </li>
-
-                    <!--
-                    Trading Card NavLink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Trading Cards
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Pokemon</a></li>
-                            <li><a class="dropdown-item" href="#">Marvel</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sports</a></li>
-                        </ul>
-                    </li>
-
-                    <!--
-                     Collectibles Navlink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Collectibles
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Retro & Classic Video Games</a></li>
-                            <li><a class="dropdown-item" href="#">Comic Books</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Figures</a></li>
-                        </ul>
-                    </li>
-
-                    <!--
-                     Clothing NavLink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Clothing
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Shirts</a></li>
-                            <li><a class="dropdown-item" href="#">Hats</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!--
-                      Electronics NavLink
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Electronics
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Headsets</a></li>
-                            <li><a class="dropdown-item" href="#">Controllers</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                        </ul>
-                    </li>
+                    {% for main_category in items.nav_cat %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ main_category.id }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ main_category.name }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ main_category.id }}">
+                                {% for product_category in main_category.productcategory_set.all %}
+                                    <li><a class="dropdown-item" href="#">{{ product_category.category_name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
                 </ul>
 
                 <!--
