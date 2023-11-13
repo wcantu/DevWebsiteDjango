@@ -2,12 +2,11 @@ from django.db import models
 class SiteUser(models.Model):
     email_address = models.EmailField(unique=True)
     password = models.CharField(max_length=128)
-    cart = models.OneToOneField('ShoppingCart',on_delete=models.PROTECT)
+
 class UserAddress(models.Model):
     user_id = models.ForeignKey('SiteUser', on_delete=models.CASCADE)
     address_id = models.ForeignKey('Address', on_delete=models.CASCADE)
     is_default = models.BooleanField(default=False)
-
 class Address(models.Model):
     unit_number = models.CharField(max_length=10, blank=True, null=True)
     street_number = models.CharField(max_length=10)
@@ -33,10 +32,7 @@ class ShoppingCartItem(models.Model):
     qty = models.PositiveIntegerField()
 
 class ShoppingCart(models.Model):
-    #user = models.OneToOneField(SiteUser, on_delete=models.CASCADE,default=1)
     user_id = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
-
-
 class PaymentType(models.Model):
     value = models.CharField(max_length=50)
 
