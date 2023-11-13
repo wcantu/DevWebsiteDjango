@@ -49,7 +49,11 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ main_category.id }}">
                                 {% for product_category in main_category.productcategory_set.all %}
-                                    <li><a class="dropdown-item" href="#">{{ product_category.category_name }}</a></li>
+
+{#                                    <li><a class="dropdown-item" href="{% url ""  product_category.category_name %}">{{ product_category.category_name }}</a></li>#}
+{#                                    The line below sets the navlink to a product subtype : /Marvel#}
+                                    <li><a class="dropdown-item" href="{{ product_category.category_name }}">{{ product_category.category_name }}</a></li>
+{#                                    <li><a class="dropdown-item" href="{ url product_category.category_name|add:" - Extra Information" %}">{{ product_category.category_name }}</a></li>#}
                                 {% endfor %}
                             </ul>
                         </li>
