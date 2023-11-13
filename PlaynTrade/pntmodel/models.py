@@ -28,7 +28,7 @@ class ShopOrder(models.Model):
 
 class ShoppingCartItem(models.Model):
     cart_id = models.ForeignKey('ShoppingCart', on_delete=models.CASCADE)
-    product_item_id = models.ForeignKey('ProductItem', on_delete=models.CASCADE)
+    product_id = models.ForeignKey('Product', on_delete=models.CASCADE,default=1)
     qty = models.PositiveIntegerField()
 
 class ShoppingCart(models.Model):
@@ -71,15 +71,22 @@ class ProductCategory(models.Model):
     def __str__(self):
         return f'{self.parent_category.name}->{self.category_name} ID: {self.id}'
 
+
 class Product(models.Model):
     category_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField()
     product_image = models.ImageField(upload_to='product_images/', blank=True, null=True)
+    SKU = models.CharField(max_length=50, unique=True, default='123456ABCDE')
+    qty_in_stock = models.PositiveIntegerField(default=0)
+    price = models.DecimalField(max_digits=10, decimal_places=2,default=0.01)
     # def __int__(self):
     #     return id
+
     def __str__(self):
         return f'{self.name} ID: {self.id}'
+
+
 class Variation(models.Model):
     name = models.CharField(max_length=100)
     category_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
@@ -90,21 +97,17 @@ class VariationOption(models.Model):
     variation_id = models.ForeignKey(Variation, on_delete=models.CASCADE)
 
 
-class ProductItem(models.Model):
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    SKU = models.CharField(max_length=50, unique=True)
-    qty_in_stock = models.PositiveIntegerField()
-    product_image = models.ImageField(upload_to='product_item_images/', blank=True, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+# class ProductItem(models.Model):
+#     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 
 class ProductConfiguration(models.Model):
-    product_item_id = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE, default=1)
     variation_option_id = models.ForeignKey(VariationOption, on_delete=models.CASCADE)
 
 
 class OrderLine(models.Model):
-    product_item_id = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE,default=1)
     order_id = models.ForeignKey(ShopOrder, on_delete=models.CASCADE)
     qty = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)

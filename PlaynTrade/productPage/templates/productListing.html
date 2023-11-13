@@ -11,14 +11,14 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6">
-        <img src="{{ item.product.product_image.url }}" alt="{{ product.name }}" class="img-fluid">
+        <img src="{{ item.product.product_image.url }}" alt="{{ item.product.name }}" class="img-fluid">
       </div>
       <div class="col-md-6">
         <h2>{{ product.name }}</h2>
         {% comment %}<p>Category: {{ item.category.category_name }}</p>{% endcomment %}
-        <p>SKU: {{ item.info.SKU }}</p>
-        <p>Price: ${{ item.info.price }}</p>
-        <p>{% if item.info.qty_in_stock > 0 %}In Stock : {{ item.info.qty_in_stock }}{% else %}Out of Stock{% endif %}</p>
+        <p>SKU: {{ item.product.SKU }}</p>
+        <p>Price: ${{ item.product.price }}</p>
+        <p>{% if item.product.qty_in_stock > 0 %}In Stock : {{ item.product.qty_in_stock }}{% else %}Out of Stock{% endif %}</p>
         <p>{{ item.product.description }}</p>
         <div class="row mb-4">
             <div class="col-6">
